@@ -16,7 +16,7 @@ function updateCounter(count) {
     $('#count').text(count);
 }
 
-// _.debounce 500
+_.debounce 500
 
 $('button').click(() => {
     const count = parseInt($('#count')['0'].innerText) | 0;
