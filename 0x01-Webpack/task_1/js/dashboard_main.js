@@ -1,4 +1,5 @@
 const $ = require('jquery');
+import _ from 'lodash';
 
 const elements = [
     $('<p>').text('Holberton Dashboard'),
@@ -7,17 +8,12 @@ const elements = [
     $("<p id='count'></p>"),
     $('<p>').text('Copyright - Holberton School')
 ];
-
-$('body').append(...elements);
-
-function updateCounter(count) {
-    count += 1;
-    $('#count').text(count);
-}
-
 // _.debounce 500
+let count = 0;
 
-$('button').click(() => {
-    const count = parseInt($('#count')['0'].innerText) | 0;
-    updateCounter(count);
-});
+function updateCounter() { count++; }
+
+$('button').click(_.debounce(() => {
+  updateCounter();
+  $('#count').text(`${count} clicks on the button`);
+}));
