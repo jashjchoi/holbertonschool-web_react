@@ -7,11 +7,17 @@ $('body').append("<button>Click here to get started</button>");
 $('body').append("<p id='count'></p>");
 $('body').append("<p>Copyright - Holberton School</p>");
 
-let counter = 0;
+let count = 0;
 
-const updateCounter = () => {
-  counter++;
-  $('#count').html(`${counter} clicks on the button`);
+function updateCounter() {
+  count++;
+  $("#count").text(`${count} clicks on the button`);
 }
 
-$('button').on('click', _.debounce(updateCounter, 500));
+const $button = $("<button>Click here to get started</button>").on(
+  "click",
+  _.debounce(updateCounter, 500, {
+    leading: true,
+    trailing: false,
+  })
+);
