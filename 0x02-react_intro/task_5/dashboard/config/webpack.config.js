@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: './src/index.js',
   performance: {
     hints: false,
@@ -14,12 +14,17 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve('./dist'),
     compress: true,
     port: 8564,
+    hot: true,
   },
   module: {
     rules: [
+      {
+        test: /\.js|\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
