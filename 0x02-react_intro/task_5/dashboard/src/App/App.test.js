@@ -1,5 +1,9 @@
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import App from './App';
+import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
+import "../../config/setupTests"
+
 
 describe('Enzyme - Testing App.js Functions:', () => {
   it('1. App running sucessfully without crashing ', (done) => {

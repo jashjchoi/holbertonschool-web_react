@@ -1,5 +1,9 @@
 import { shallow } from 'enzyme';
 import Notification from './Notifications';
+import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
+import "../../config/setupTests"
+
 
 describe('Enzyme - Testing Notification.js Functions:', () => {
   it('1. Notification running without crashing', () => {
