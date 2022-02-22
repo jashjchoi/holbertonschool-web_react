@@ -21,13 +21,30 @@ const listNotifications = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleClick);
+  }
+
+  handleClick(event) {
+    if (event.ctrlKey && event.key === 'h') {
+      event.preventDefault();
+      alert('Logging you out');
+      this.props.logOut();
+    }
+  }
+
   render (){
     return (
       <>
         <Notifications listNotifications={listNotifications} />
         <div className="App">
           <Header />
-            {this.props.isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+          {this.props.isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
           <Footer />
         </div>
       </>
@@ -37,10 +54,12 @@ class App extends Component {
 
 App.defaultProps = {
   isLoggedIn: false,
+  logOut: () => void(0),
 };
 
 App.propTypes = {
-  isLoggedIn: bool,
+  isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
 };
 
 export default App;
