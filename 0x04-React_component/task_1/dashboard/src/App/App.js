@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Notifications from '../Notifications/Notifications';
 import CourseList from '../CourseList/CourseList';
 import './App.css';
-import { bool } from 'prop-types';
+import { PropTypes, bool } from 'prop-types';
 import { getLatestNotification } from "../utils/utils";
 
 const listCourses = [
