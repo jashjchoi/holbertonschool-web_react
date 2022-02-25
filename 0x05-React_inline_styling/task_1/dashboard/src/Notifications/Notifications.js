@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     border: '1px dashed #E0434C',
     padding: '1em',
     float: 'right',
-    display:'block,'
+    display:'block',
     margin: '10px 30px 0 0'
   },
   menuItem: {

@@ -26,15 +26,15 @@ const listNotifications = [
 const styles = StyleSheet.create({
   body: {
     backgroundColor: '#fff',
-    padding: '4rem',
-    minHeight: '26rem',
+    padding: '3rem',
+    minHeight: '25rem',
   },
   footer: {
     backgroundColor: '#fff',
     textAlign: 'center',
     width: '100%',
     bottom: '0px',
-    borderTop: '3px solid #e1354b',
+    borderTop: '3px solid #E0434C',
     fontStyle: 'italic',
     padding: '1rem 0'
   }
