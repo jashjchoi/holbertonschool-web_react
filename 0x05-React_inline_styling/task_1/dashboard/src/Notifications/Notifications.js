@@ -21,9 +21,10 @@ const imgStyle = {
 
 const styles = StyleSheet.create({
   notifications: {
-    border: '3px dashed #e14852',
+    border: '1px dashed #E0434C',
     padding: '1em',
     float: 'right',
+    display:'block,'
     margin: '10px 30px 0 0'
   },
   menuItem: {
