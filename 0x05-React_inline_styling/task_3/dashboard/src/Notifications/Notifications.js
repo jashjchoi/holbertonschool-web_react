@@ -1,7 +1,7 @@
 import React from 'react';
 import close_icon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
-import PropTypes, { nominalTypeHack } from 'prop-types';
+import PropTypes from 'prop-types';
 import NotificationItemShape from './NotificationItemShape';
 import { StyleSheet, css } from 'aphrodite';
 
