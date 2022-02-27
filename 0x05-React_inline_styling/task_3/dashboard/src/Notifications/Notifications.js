@@ -27,7 +27,7 @@ class Notifications extends React.Component {
   render() {
     return (
       <div className={css(styles.notificationContainer, styles.mobileNotiContainer)}>
-        <div className={css(styles.menuItem)} id="menuItem">Your notifications</div>
+        <div className={css(styles.menuItem, this.props.displayDrawer ? styles.hideElement: '')} id="menuItem">Your notifications</div>
         { this.props.displayDrawer ?
           (<div className={css(styles.notifications, styles.moblieNotification)} id="notifications">
             <button style={btnStyle} aria-label='Close' onClick={() => console.log('Close button has been clicked')}>
@@ -102,9 +102,7 @@ const styles = StyleSheet.create({
     }
   },
   hideElement: {
-    '@media (max-width: 900px)': {
-      display: 'none',
-    }
+    display: 'none',
   },
   mombileText: {
     '@media (max-width: 900px)': {
